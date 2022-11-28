@@ -1,0 +1,61 @@
+.main {
+  padding: 16px 16px 0 16px;
+  &__wellcome {
+    padding: 20px 0;
+  }
+  &__schedule-title {
+    padding: 15px 0;
+  }
+}
+
+.board {
+  padding: 32px;
+  border-radius: 15px;
+  background-color: $background-main;
+  &__element {
+    padding-bottom: 16px;
+  }
+  &__btn {
+    display: block;
+    margin: 0 auto;
+    height: 30px;
+    width: 120px;
+    background-color: $btn-main-color;
+    border: 0;
+    border-radius: 8px;
+    color: black;
+    font-family: inherit;
+    line-height: 30px;
+    &-arrow {
+      font-size: 18px;
+      padding: 0 5px;
+    }
+  }
+}
+
+.work-day {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "date hour-start"
+    "place hour-end";
+  gap: 5px 5px;
+  &__date {
+    grid-area: date;
+    font-size: 24px;
+  }
+  &__place {
+    grid-area: place;
+  }
+  &__hour-start {
+    grid-area: hour-start;
+    text-align: right;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  &__hour-end {
+    grid-area: hour-end;
+    text-align: right;
+  }
+}
