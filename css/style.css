@@ -10,7 +10,7 @@
   list-style: none;
 }
 .nav__navElement {
-  height: 7vh;
+  height: 8vh;
   width: 25vw;
 }
 .nav__navElement-link {
@@ -55,11 +55,12 @@
 .main__wellcome {
   padding: 20px 0;
 }
-.main__schedule-title {
+.main__board-title {
   padding: 15px 0;
 }
 
 .board {
+  margin-bottom: 16px;
   padding: 32px;
   border-radius: 15px;
   background-color: #d0d0d0;
@@ -83,11 +84,13 @@
   font-size: 18px;
   padding: 0 5px;
 }
+.board:last-child {
+  margin-bottom: 9vh;
+}
 
 .work-day {
   display: grid;
   grid-template-columns: 3fr 1fr;
-  grid-template-rows: 1fr 1fr;
   grid-template-areas: "date hour-start" "place hour-end";
   gap: 5px 5px;
 }
@@ -107,6 +110,14 @@
 .work-day__hour-end {
   grid-area: hour-end;
   text-align: right;
+}
+.work-day__extra {
+  margin-left: 6px;
+  padding: 2px 8px;
+  font-size: 12px;
+  background-color: #ce0000;
+  color: white;
+  border-radius: 5px;
 }
 
 * {

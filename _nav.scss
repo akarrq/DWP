@@ -9,7 +9,7 @@
   background-color: $background-main;
   list-style: none;
   &__navElement {
-    height: 7vh;
+    height: $nav-hight;
     width: 25vw;
     &-link {
       display: flex;

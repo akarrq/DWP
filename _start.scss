@@ -3,12 +3,13 @@
   &__wellcome {
     padding: 20px 0;
   }
-  &__schedule-title {
+  &__board-title {
     padding: 15px 0;
   }
 }
 
 .board {
+  margin-bottom: 16px;
   padding: 32px;
   border-radius: 15px;
   background-color: $background-main;
@@ -31,12 +32,15 @@
       padding: 0 5px;
     }
   }
+  &:last-child {
+    margin-bottom: calc($nav-hight + 1vh);
+  }
 }
 
 .work-day {
   display: grid;
   grid-template-columns: 3fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  // grid-template-rows: 1fr 1fr;
   grid-template-areas:
     "date hour-start"
     "place hour-end";
@@ -57,5 +61,13 @@
   &__hour-end {
     grid-area: hour-end;
     text-align: right;
+  }
+  &__extra {
+    margin-left: 6px;
+    padding: 2px 8px;
+    font-size: 12px;
+    background-color: #ce0000;
+    color: white;
+    border-radius: 5px;
   }
 }
