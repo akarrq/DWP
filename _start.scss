@@ -8,35 +8,6 @@
   }
 }
 
-.board {
-  margin-bottom: 16px;
-  padding: 32px;
-  border-radius: 15px;
-  background-color: $background-main;
-  &__element {
-    padding-bottom: 16px;
-  }
-  &__btn {
-    display: block;
-    margin: 0 auto;
-    height: 30px;
-    width: 120px;
-    background-color: $btn-main-color;
-    border: 0;
-    border-radius: 8px;
-    color: black;
-    font-family: inherit;
-    line-height: 30px;
-    &-arrow {
-      font-size: 18px;
-      padding: 0 5px;
-    }
-  }
-  &:last-child {
-    margin-bottom: calc($nav-hight + 1vh);
-  }
-}
-
 .work-day {
   display: grid;
   grid-template-columns: 3fr 1fr;

@@ -3,7 +3,9 @@ $btn-main-color: #e19654;
 $nav-hight: 8vh;
 
 @import "nav";
+@import "boards";
 @import "start";
+@import "vehicle";
 
 * {
   box-sizing: border-box;

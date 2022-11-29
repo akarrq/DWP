@@ -1,0 +1,21 @@
+.return {
+  padding-top: 16px;
+  &__link {
+    color: black;
+    text-decoration: none;
+  }
+  &__img {
+    padding-right: 6px;
+  }
+}
+
+.cars {
+  padding: 12px;
+  border-bottom: 1px solid black;
+  &:last-of-type {
+    border-bottom: none;
+  }
+  &__car-img {
+    padding: 0 12px;
+  }
+}

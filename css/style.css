@@ -49,16 +49,6 @@
   grid-area: wehicle;
 }
 
-.main {
-  padding: 16px 16px 0 16px;
-}
-.main__wellcome {
-  padding: 20px 0;
-}
-.main__board-title {
-  padding: 15px 0;
-}
-
 .board {
   margin-bottom: 16px;
   padding: 32px;
@@ -86,6 +76,46 @@
 }
 .board:last-child {
   margin-bottom: 9vh;
+}
+.board__stage-dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+  margin-top: 12px;
+}
+.board__dot--active-dot {
+  margin: 0 5px;
+}
+.board__dot--inactive-dot {
+  height: 10px;
+  width: 10px;
+  margin: 4px 5px;
+  border-radius: 50%;
+  background-color: black;
+}
+.board__dot--inactive-dot:first-child {
+  height: 8px;
+  width: 8px;
+  margin: 5px;
+}
+.board__dot:last-child {
+  height: 8px;
+  width: 8px;
+  margin: 5px;
+}
+
+.main {
+  padding: 16px 16px 0 16px;
+}
+.main__wellcome {
+  padding: 20px 0;
+}
+.main__board-title {
+  padding: 15px 0;
 }
 
 .work-day {
@@ -118,6 +148,28 @@
   background-color: #ce0000;
   color: white;
   border-radius: 5px;
+}
+
+.return {
+  padding-top: 16px;
+}
+.return__link {
+  color: black;
+  text-decoration: none;
+}
+.return__img {
+  padding-right: 6px;
+}
+
+.cars {
+  padding: 12px;
+  border-bottom: 1px solid black;
+}
+.cars:last-of-type {
+  border-bottom: none;
+}
+.cars__car-img {
+  padding: 0 12px;
 }
 
 * {
