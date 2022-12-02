@@ -161,14 +161,14 @@
   padding-right: 6px;
 }
 
-.cars {
+.list {
   padding: 12px;
   border-bottom: 1px solid black;
 }
-.cars:last-of-type {
+.list:last-of-type {
   border-bottom: none;
 }
-.cars__car-img {
+.list__item-img {
   padding: 0 12px;
 }
 

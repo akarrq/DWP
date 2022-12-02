@@ -9,13 +9,13 @@
   }
 }
 
-.cars {
+.list {
   padding: 12px;
   border-bottom: 1px solid black;
   &:last-of-type {
     border-bottom: none;
   }
-  &__car-img {
+  &__item-img {
     padding: 0 12px;
   }
 }
