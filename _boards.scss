@@ -1,10 +1,29 @@
+.board-flex-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .board {
   margin-bottom: 16px;
   padding: 32px;
   border-radius: 15px;
   background-color: $background-main;
+  &--small {
+    margin: 6px;
+    padding: 20px 26px;
+    flex-grow: 1;
+  }
   &__element {
     padding-bottom: 16px;
+    &--small {
+      text-align: center;
+    }
+  }
+  &__img {
+    &--small {
+      font-size: 45px;
+    }
   }
   &__btn {
     display: block;
@@ -21,9 +40,6 @@
       font-size: 18px;
       padding: 0 5px;
     }
-  }
-  &:last-child {
-    margin-bottom: calc($nav-hight + 1vh);
   }
   &__stage-dots {
     display: flex;
@@ -52,5 +68,16 @@
       width: 8px;
       margin: 5px;
     }
+  }
+}
+
+.list {
+  padding: 12px;
+  border-bottom: 1px solid black;
+  &:last-of-type {
+    border-bottom: none;
+  }
+  &__item-img {
+    padding: 0 12px;
   }
 }

@@ -8,14 +8,3 @@
     padding-right: 6px;
   }
 }
-
-.list {
-  padding: 12px;
-  border-bottom: 1px solid black;
-  &:last-of-type {
-    border-bottom: none;
-  }
-  &__item-img {
-    padding: 0 12px;
-  }
-}
