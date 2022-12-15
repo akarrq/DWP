@@ -8,6 +8,7 @@
   right: 0;
   background-color: $background-main;
   list-style: none;
+  z-index: 10;
   &__navElement {
     height: $nav-hight;
     width: 25vw;

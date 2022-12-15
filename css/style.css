@@ -8,6 +8,7 @@
   right: 0;
   background-color: #d0d0d0;
   list-style: none;
+  z-index: 10;
 }
 .nav__navElement {
   height: 8vh;
@@ -71,6 +72,9 @@
   gap: 4px;
   margin-top: 16px;
 }
+.board-grid-wrapper--horizontal {
+  grid-template-columns: 1fr;
+}
 
 .board {
   margin-bottom: 16px;
@@ -91,6 +95,9 @@
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+}
+.board--small-active {
+  background-color: rgba(62, 83, 21, 0.4);
 }
 .board--vsmall {
   margin: 0;
@@ -186,6 +193,96 @@
   padding: 2px;
   border-radius: 10px;
   background-color: rgba(225, 150, 84, 0.8);
+}
+
+.range {
+  margin: 5px 0;
+  overflow: hidden;
+  background-color: #d0d0d0;
+  border-radius: 15px;
+}
+.range--horizontal {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+}
+.range__sliders-control {
+  position: relative;
+  height: 40vh;
+  border-radius: 15px;
+}
+.range__sliders-control--horizontal {
+  height: 6vh;
+  background-color: #e19654;
+}
+.range__sliders-control-title {
+  padding: 0 5px;
+  line-height: 6vh;
+}
+.range__slider {
+  display: none;
+}
+.range__slider--active {
+  display: block;
+  -webkit-writing-mode: bt-lt;
+      -ms-writing-mode: bt-lt;
+          writing-mode: bt-lt;
+  -webkit-appearance: slider-vertical;
+     -moz-appearance: slider-vertical;
+          appearance: slider-vertical;
+  pointer-events: all;
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-color: transparent;
+}
+.range__slider--active::-moz-range-thumb {
+  width: 100%;
+  border: none;
+  background-color: rgba(169, 112, 63, 0.4);
+}
+.range__slider--active::-moz-range-track {
+  width: 100%;
+}
+.range__slider--active::-moz-range-progress {
+  width: 100%;
+}
+.range__from-slider {
+  left: 0;
+  z-index: 1;
+}
+.range__to-slider {
+  right: 0;
+}
+.range__input {
+  display: none;
+}
+
+.hour-scale {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: right;
+}
+.hour-scale__element {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+.hour-scale--right {
+  text-align: left;
+}
+.hour-scale--horizontal {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: left;
 }
 
 .main {

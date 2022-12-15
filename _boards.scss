@@ -9,6 +9,10 @@
   grid-template-columns: 1fr repeat(7, 2fr) 1fr;
   gap: 4px;
   margin-top: 16px;
+  &--horizontal {
+    grid-template-columns: 1fr;
+    // grid-template-rows: 1fr repeat(6, 2fr);
+  }
 }
 
 .board {
@@ -25,6 +29,9 @@
     margin: 6px;
     padding: 12px;
     flex-grow: 1;
+    &-active {
+      background-color: rgba($nav-active-btn, 0.4);
+    }
   }
   &--vsmall {
     margin: 0;

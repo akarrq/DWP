@@ -1,0 +1,75 @@
+.range {
+  margin: 5px 0;
+  overflow: hidden;
+  background-color: $background-main;
+  border-radius: 15px;
+  &--horizontal {
+    display: grid;
+    gap: 4px;
+    margin: 0;
+  }
+  &__sliders-control {
+    position: relative;
+    height: 40vh;
+    border-radius: 15px;
+    &--horizontal {
+      height: 6vh;
+      background-color: $btn-main-color;
+    }
+  }
+  &__sliders-control-title {
+    padding: 0 5px;
+    line-height: 6vh;
+  }
+  &__slider {
+    display: none;
+  }
+  &__slider--active {
+    display: block;
+    writing-mode: bt-lt;
+    appearance: slider-vertical;
+    pointer-events: all;
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: transparent;
+    &::-moz-range-thumb {
+      width: 100%;
+      border: none;
+      background-color: rgba(#a9703f, 0.4);
+    }
+    &::-moz-range-track {
+      width: 100%;
+    }
+    &::-moz-range-progress {
+      width: 100%;
+    }
+  }
+  &__from-slider {
+    left: 0;
+    z-index: 1;
+  }
+  &__to-slider {
+    right: 0;
+  }
+  &__input {
+    display: none;
+  }
+}
+
+.hour-scale {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  &__element {
+    flex-grow: 1;
+  }
+  &--right {
+    text-align: left;
+  }
+  &--horizontal {
+    flex-direction: row;
+    text-align: left;
+  }
+}
