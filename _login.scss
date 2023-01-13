@@ -1,0 +1,71 @@
+@font-face {
+  font-family: "Montserrat-Alt1";
+  src: url(/fonts/MontserratAlt1-Light.woff2);
+}
+
+.loginsite {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+  background-color: #21392b;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  &__waves {
+    height: 80vh;
+  }
+}
+
+.main {
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10vh 0;
+  &__img {
+    padding-right: 15px;
+    height: calc(3 * 34px);
+  }
+  &__txt {
+    font-family: "Montserrat-Alt1", "Roboto", sans-serif;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: #f6f6f6;
+    font-size: 38px;
+    line-height: 34px;
+  }
+}
+
+.login {
+  background-color: rgba(#f6f6f6, 0.7);
+  &__input {
+    display: block;
+    margin: 5px 0;
+    height: 50px;
+    width: 100%;
+    border: 2px solid #21392b;
+    border-radius: 25px;
+    outline: none;
+    background-color: #d0d0d0;
+    font-size: 18px;
+    padding: 0 10px;
+    &--btn {
+      cursor: pointer;
+      background-color: #21392b;
+      color: #f6f6f6;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 50px;
+      text-decoration: none;
+    }
+  }
+}

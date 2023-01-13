@@ -39,8 +39,8 @@
 }
 .nav__navElement-link-img--active {
   border-radius: 25px;
-  background-color: rgba(62, 83, 21, 0.4);
-  color: #3e5315;
+  background-color: rgba(33, 57, 43, 0.4);
+  color: #21392b;
 }
 .nav__navMore {
   grid-area: more;
@@ -97,7 +97,7 @@
           flex-grow: 1;
 }
 .board--small-active {
-  background-color: rgba(62, 83, 21, 0.4);
+  background-color: rgba(33, 57, 43, 0.4);
 }
 .board--vsmall {
   margin: 0;
@@ -176,6 +176,9 @@
 .list:last-of-type {
   border-bottom: none;
 }
+.list__item--important {
+  color: #db3b2f;
+}
 .list__item-img {
   padding: 0 12px;
 }
@@ -224,29 +227,48 @@
 }
 .range__slider--active {
   display: block;
-  -webkit-writing-mode: bt-lt;
-      -ms-writing-mode: bt-lt;
-          writing-mode: bt-lt;
-  -webkit-appearance: slider-vertical;
-     -moz-appearance: slider-vertical;
-          appearance: slider-vertical;
-  pointer-events: all;
   position: absolute;
   top: 0;
-  width: 50%;
-  height: 100%;
+  left: 50%;
+  width: 40vh;
+  height: 20px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-transform-origin: left bottom;
+          transform-origin: left bottom;
+  top: -20px;
   background-color: transparent;
+  -webkit-appearance: none;
+  cursor: pointer;
+  outline: none;
 }
 .range__slider--active::-moz-range-thumb {
-  width: 100%;
-  border: none;
-  background-color: rgba(169, 112, 63, 0.4);
+  border: 1px solid rgba(169, 112, 63, 0.4);
+  height: 40px;
+  width: 20px;
+  border-radius: 15px;
+  background: #fff;
+  cursor: pointer;
 }
-.range__slider--active::-moz-range-track {
-  width: 100%;
+.range__slider--active::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid rgba(169, 112, 63, 0.4);
+  height: 40px;
+  width: 20px;
+  border-radius: 15px;
+  background: #fff;
+  cursor: pointer;
+  margin-top: -1px;
 }
-.range__slider--active::-moz-range-progress {
+.range__slider--horizontal {
+  -webkit-transform: none;
+          transform: none;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 50%;
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
 }
 .range__from-slider {
   left: 0;
@@ -254,6 +276,10 @@
 }
 .range__to-slider {
   right: 0;
+}
+.range__to-slider--horizontal {
+  top: auto;
+  bottom: 0;
 }
 .range__input {
   display: none;
@@ -338,15 +364,101 @@
   padding-right: 6px;
 }
 
+@font-face {
+  font-family: "Montserrat-Alt1";
+  src: url(/fonts/MontserratAlt1-Light.woff2);
+}
+.loginsite {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 0;
+  background-color: #21392b;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+.background__waves {
+  height: 80vh;
+}
+
+.main {
+  position: relative;
+}
+
+.logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10vh 0;
+}
+.logo__img {
+  padding-right: 15px;
+  height: 102px;
+}
+.logo__txt {
+  font-family: "Montserrat-Alt1", "Roboto", sans-serif;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: #f6f6f6;
+  font-size: 38px;
+  line-height: 34px;
+}
+
+.login {
+  background-color: rgba(246, 246, 246, 0.7);
+}
+.login__input {
+  display: block;
+  margin: 5px 0;
+  height: 50px;
+  width: 100%;
+  border: 2px solid #21392b;
+  border-radius: 25px;
+  outline: none;
+  background-color: #d0d0d0;
+  font-size: 18px;
+  padding: 0 10px;
+}
+.login__input--btn {
+  cursor: pointer;
+  background-color: #21392b;
+  color: #f6f6f6;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 50px;
+  text-decoration: none;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: "roboto", arial;
   margin: 0;
   padding: 0;
-  font-weight: 100;
+  font-weight: 300;
 }
 
 body {
   margin-bottom: 9vh;
+}
+
+a {
+  text-decoration: none;
 }/*# sourceMappingURL=style.css.map */

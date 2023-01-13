@@ -1,6 +1,6 @@
 $background-main: #d0d0d0;
 $btn-main-color: #e19654;
-$nav-active-btn: #3e5315;
+$nav-active-btn: #21392b;
 $nav-hight: 8vh;
 
 @import "nav";
@@ -9,15 +9,20 @@ $nav-hight: 8vh;
 @import "sliders";
 @import "start";
 @import "vehicle";
+@import "login";
 
 * {
   box-sizing: border-box;
   font-family: "roboto", arial;
   margin: 0;
   padding: 0;
-  font-weight: 100;
+  font-weight: 300;
 }
 
 body {
   margin-bottom: calc($nav-hight + 1vh);
+}
+
+a {
+  text-decoration: none;
 }
