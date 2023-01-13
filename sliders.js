@@ -74,7 +74,7 @@ function fillSlider(from, to, sliderColor, rangeColor, fillArea) {
   const fromPosition = from.value - to.min;
   const toPosition = to.value - to.min;
   fillArea.style.background = `linear-gradient(
-    to top,
+    to bottom,
     ${sliderColor} 0%,
     ${sliderColor} ${(fromPosition / rangeDistance) * 100}%,
     ${rangeColor} ${(fromPosition / rangeDistance) * 100}%,
@@ -82,6 +82,16 @@ function fillSlider(from, to, sliderColor, rangeColor, fillArea) {
     ${sliderColor} ${(toPosition / rangeDistance) * 100}%, 
     ${sliderColor} 100%)`;
 }
+
+// fillAreas.forEach((fillSlider) => {
+//   fillSlider.oninput = () => {
+//     fromSlider,
+//     fromSlider.nextElementSibling,
+//     sliderColor,
+//     rangeColor,
+//     fromSlider.offsetParent
+//   }
+// })
 
 fromSliders.forEach((fromSlider) => {
   fromSlider.oninput = () => {

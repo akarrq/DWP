@@ -110,6 +110,9 @@
   &:last-of-type {
     border-bottom: none;
   }
+  &__item--important {
+    color: #db3b2f;
+  }
   &__item-img {
     padding: 0 12px;
   }
