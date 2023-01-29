@@ -79,6 +79,10 @@
     &-arrow {
       font-size: 18px;
       padding: 0 5px;
+      transform: rotateZ(0deg);
+      &Active {
+        transform: rotateZ(180deg);
+      }
     }
   }
   &__stage-dots {

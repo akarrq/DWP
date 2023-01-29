@@ -144,6 +144,12 @@
 .board__btn-arrow {
   font-size: 18px;
   padding: 0 5px;
+  -webkit-transform: rotateZ(0deg);
+          transform: rotateZ(0deg);
+}
+.board__btn-arrowActive {
+  -webkit-transform: rotateZ(180deg);
+          transform: rotateZ(180deg);
 }
 .board__stage-dots {
   display: -webkit-box;
@@ -453,6 +459,13 @@
   text-align: center;
   line-height: 50px;
   text-decoration: none;
+}
+.login__help {
+  display: none;
+}
+.login__help--active {
+  display: block;
+  padding: 10px 5px;
 }
 
 * {
