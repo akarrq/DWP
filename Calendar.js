@@ -63,6 +63,7 @@ class Calendar {
   }
   showNextWeek() {
     console.log("następny tydzień");
+    console.log(this);
     this.createCalendarDays();
     console.log("done"); // to fix
   }
