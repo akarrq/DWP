@@ -8,7 +8,7 @@ class Sliders {
 
     this.rangeColor = "#e19654";
     this.sliderColor = "transparent";
-    this.drawDirection = null;
+    this.drawDirection = "bottom";
   }
   init() {
     this.fromSliders.forEach((fromSlider) => {
@@ -18,12 +18,18 @@ class Sliders {
         this.drawDirection = "bottom";
       }
       fromSlider.oninput = () => {
+        if (fromSlider.classList.contains("range__slider--horizontal")) {
+          this.drawDirection = "right";
+        } else {
+          this.drawDirection = "bottom";
+        }
         this.controlFromSlider(
           fromSlider,
           fromSlider.nextElementSibling,
           fromSlider.parentElement.children[2]
         );
       };
+
       this.fillSlider(
         fromSlider,
         fromSlider.nextElementSibling,
@@ -32,6 +38,11 @@ class Sliders {
     });
 
     this.toSliders.forEach((toSlider) => {
+      if (toSlider.classList.contains("range__slider--horizontal")) {
+        this.drawDirection = "right";
+      } else {
+        this.drawDirection = "bottom";
+      }
       toSlider.oninput = () =>
         this.controlToSlider(
           toSlider.previousElementSibling,
@@ -40,47 +51,49 @@ class Sliders {
         );
     });
 
-    this.fromInputs.forEach((fromInput) => {
-      fromInput.oninput = () =>
-        this.controlFromInput(
-          fromInput.parentElement.children[0],
-          fromInput,
-          fromInput.nextElementSibling,
-          fromInput.offsetParent
-        );
-    });
+    // this.fromInputs.forEach((fromInput) => {
 
-    this.toInputs.forEach((toInput) => {
-      toInput.oninput = () =>
-        this.controlToInput(
-          toInput.parentElement.children[1],
-          toInput.previousElementSibling,
-          toInput,
-          toInput.offsetParent
-        );
-    });
-  }
-  controlFromInput(fromSlider, fromInput, toInput, controlSlider) {
-    const [from, to] = this.getParsed(fromInput, toInput);
-    this.fillSlider(fromInput, toInput, controlSlider);
-    if (from > to) {
-      fromSlider.value = to;
-      fromInput.value = to;
-    } else {
-      fromSlider.value = from;
-    }
+    //   fromInput.oninput = () =>
+    //     this.controlFromInput(
+    //       fromInput.parentElement.children[0],
+    //       fromInput,
+    //       fromInput.nextElementSibling,
+    //       fromInput.offsetParent
+    //     );
+    // });
+
+    // this.toInputs.forEach((toInput) => {
+    //   toInput.oninput = () =>
+    //     this.controlToInput(
+    //       toInput.parentElement.children[1],
+    //       toInput.previousElementSibling,
+    //       toInput,
+    //       toInput.offsetParent
+    //     );
+    // });
   }
 
-  controlToInput(toSlider, fromInput, toInput, controlSlider) {
-    const [from, to] = this.getParsed(fromInput, toInput);
-    this.fillSlider(fromInput, toInput, controlSlider);
-    if (from <= to) {
-      toSlider.value = to;
-      toInput.value = to;
-    } else {
-      toInput.value = from;
-    }
-  }
+  // controlFromInput(fromSlider, fromInput, toInput, controlSlider) {
+  //   const [from, to] = this.getParsed(fromInput, toInput);
+  //   this.fillSlider(fromInput, toInput, controlSlider);
+  //   if (from > to) {
+  //     fromSlider.value = to;
+  //     fromInput.value = to;
+  //   } else {
+  //     fromSlider.value = from;
+  //   }
+  // }
+
+  // controlToInput(toSlider, fromInput, toInput, controlSlider) {
+  //   const [from, to] = this.getParsed(fromInput, toInput);
+  //   this.fillSlider(fromInput, toInput, controlSlider);
+  //   if (from <= to) {
+  //     toSlider.value = to;
+  //     toInput.value = to;
+  //   } else {
+  //     toInput.value = from;
+  //   }
+  // }
 
   controlFromSlider(fromSlider, toSlider, fromInput) {
     const [from, to] = this.getParsed(fromSlider, toSlider);
