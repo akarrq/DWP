@@ -52,10 +52,16 @@ class Calendar {
   addNavigationSupport(direction) {
     if (direction === "left") {
       this.calendarPreviousBtn = this.calendarNavBtn;
-      this.calendarPreviousBtn.addEventListener("click", this.showPreviousWeek);
+      this.calendarPreviousBtn.addEventListener(
+        "click",
+        this.showPreviousWeek.bind(this)
+      );
     } else {
       this.calendarNextBtn = this.calendarNavBtn;
-      this.calendarNextBtn.addEventListener("click", this.showNextWeek);
+      this.calendarNextBtn.addEventListener(
+        "click",
+        this.showNextWeek.bind(this)
+      );
     }
   }
   showPreviousWeek() {
@@ -63,9 +69,7 @@ class Calendar {
   }
   showNextWeek() {
     console.log("następny tydzień");
-    console.log(this);
     this.createCalendarDays();
-    console.log("done"); // to fix
   }
   createDayOfWeeksNames() {
     this.calendarDayName.textContent = this.daysNames[this.dayName];
