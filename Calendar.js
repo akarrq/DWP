@@ -64,7 +64,7 @@ class Calendar {
       );
     } else {
       this.calendarNextBtn = this.calendarNavBtn;
-      if (this.currentWeekNumber >= 2) {
+      if (this.currentWeekNumber >= 3) {
         this.calendarNavBtnWrapper.classList.add("calendar__nav-btn--inactive");
         return;
       }

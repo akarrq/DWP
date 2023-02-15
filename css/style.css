@@ -215,6 +215,9 @@
   border-radius: 10px;
   background-color: rgba(225, 150, 84, 0.8);
 }
+.calendar__wrapper {
+  margin-bottom: 16px;
+}
 
 .range {
   margin: 5px 0;
