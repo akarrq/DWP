@@ -3,8 +3,9 @@ class Calendar {
     this.now = new Date();
     this.day = this.now.getDate();
     this.dayName = this.now.getDay();
-    this.month = this.now.getMonth();
+    this.month = this.now.getMonth() + 1;
     this.year = this.now.getFullYear();
+    this.currentWeekNumber = 1;
 
     this.daysNames = ["Nd", "Po", "Wt", "Śr", "Cz", "Pt", "So"];
 
@@ -20,7 +21,7 @@ class Calendar {
     this.calendarNextBtn = null;
     this.calendarPreviousBtn = null;
   }
-  init() {
+  renderCalendar() {
     this.createCalendarNavigation("left");
     this.createCalendarDays();
     this.createCalendarNavigation("right");
@@ -37,8 +38,10 @@ class Calendar {
       this.calendarWrapper.appendChild(this.calendarDay);
       this.calendarDay.appendChild(this.calendarDayName);
       this.createDayOfWeeksNames();
+      this.decorateTodayDay();
       this.createDayOfWeeksNumbers();
     }
+    console.log(this.currentWeekNumber);
   }
   createCalendarNavigation(direction) {
     this.calendarNavBtnWrapper = document.createElement("div");
@@ -52,12 +55,20 @@ class Calendar {
   addNavigationSupport(direction) {
     if (direction === "left") {
       this.calendarPreviousBtn = this.calendarNavBtn;
+      if (this.currentWeekNumber <= 0) {
+        this.calendarNavBtnWrapper.classList.add("calendar__nav-btn--inactive");
+        return;
+      }
       this.calendarPreviousBtn.addEventListener(
         "click",
         this.showPreviousWeek.bind(this)
       );
     } else {
       this.calendarNextBtn = this.calendarNavBtn;
+      if (this.currentWeekNumber >= 2) {
+        this.calendarNavBtnWrapper.classList.add("calendar__nav-btn--inactive");
+        return;
+      }
       this.calendarNextBtn.addEventListener(
         "click",
         this.showNextWeek.bind(this)
@@ -65,12 +76,27 @@ class Calendar {
     }
   }
   showPreviousWeek() {
-    console.log("poprzedni tydzień");
+    this.calendarWrapper.innerHTML = "";
+    if (this.day - 14 > 0) {
+      this.day = this.day - 14;
+    } else {
+      const daysInPreviousMonth = new Date(
+        this.year,
+        this.month - 1,
+        0
+      ).getDate();
+      this.day = this.day - 14 + daysInPreviousMonth;
+      this.month--;
+    }
+    this.currentWeekNumber--;
+    this.renderCalendar();
   }
   showNextWeek() {
-    console.log("następny tydzień");
-    this.createCalendarDays();
+    this.calendarWrapper.innerHTML = "";
+    this.currentWeekNumber++;
+    this.renderCalendar();
   }
+
   createDayOfWeeksNames() {
     this.calendarDayName.textContent = this.daysNames[this.dayName];
     if (this.dayName < this.daysNames.length - 1) {
@@ -89,7 +115,7 @@ class Calendar {
     this.calendarDayNumber = document.createElement("h4");
     this.calendarDayNumber.classList.add("calendar__date");
     this.calendarDayNumber.textContent = this.day;
-    const daysInMonth = new Date(this.year, this.month + 1, 0).getDate();
+    const daysInMonth = new Date(this.year, this.month, 0).getDate();
     if (this.day < daysInMonth) {
       this.day++;
     } else {
@@ -98,7 +124,13 @@ class Calendar {
     }
     this.calendarDayNumberWrapper.appendChild(this.calendarDayNumber);
   }
+
+  decorateTodayDay() {
+    if (this.day === this.now.getDate()) {
+      this.calendarDay.classList.add("board--vsmall-active");
+    }
+  }
 }
 
 let cal = new Calendar();
-cal.init();
+cal.renderCalendar();
