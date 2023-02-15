@@ -41,7 +41,6 @@ class Calendar {
       this.decorateTodayDay();
       this.createDayOfWeeksNumbers();
     }
-    console.log(this.currentWeekNumber);
   }
   createCalendarNavigation(direction) {
     this.calendarNavBtnWrapper = document.createElement("div");
@@ -124,7 +123,6 @@ class Calendar {
     }
     this.calendarDayNumberWrapper.appendChild(this.calendarDayNumber);
   }
-
   decorateTodayDay() {
     if (this.day === this.now.getDate()) {
       this.calendarDay.classList.add("board--vsmall-active");
