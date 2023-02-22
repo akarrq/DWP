@@ -8,3 +8,36 @@
     padding-right: 6px;
   }
 }
+
+.carEdit {
+  width: 100%;
+  font-size: 22px;
+  & > div > i {
+    font-size: 56px;
+  }
+  &__confirmBtn {
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    color: $nav-active-btn;
+  }
+  &__odometer {
+    display: block;
+    margin: 10px auto;
+    height: 48px;
+    width: 80%;
+    border: 1px solid $nav-active-btn;
+    border-radius: 5px;
+    font-size: 22px;
+    text-align: center;
+  }
+  &__confirmMessage {
+    text-align: center;
+    color: green;
+    margin: 10px 0;
+  }
+  &__inactive {
+    display: none;
+  }
+}

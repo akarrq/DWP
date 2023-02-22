@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
     <title>Pojazd - Drivers Work Plan</title>
 
     <link
@@ -63,28 +66,28 @@
       </h1>
       <h2 class="main__board-title">Zarejestruj stan licznka</h2>
       <div class="board-flex-wrapper">
-        <div class="board board--medium">
+        <div class="board board--medium" data-id="car">
           <div class="board__element board__element--medium">
             <i class="fa-solid fa-car-side board__img--medium"></i>
             <h3>Toyota Aygo</h3>
             <h3>WI073LU</h3>
           </div>
         </div>
-        <div class="board board--medium">
+        <div class="board board--medium" data-id="car">
           <div class="board__element board__element--medium">
             <i class="fa-solid fa-car-side board__img--medium"></i>
             <h3>Toyota Aygo</h3>
             <h3>WI074LU</h3>
           </div>
         </div>
-        <div class="board board--medium">
+        <div class="board board--medium" data-id="car">
           <div class="board__element board__element--medium">
             <i class="fa-solid fa-car-side board__img--medium"></i>
             <h3>Toyota Aygo</h3>
             <h3>WI175LN</h3>
           </div>
         </div>
-        <div class="board board--medium">
+        <div class="board board--medium" data-id="car">
           <div class="board__element board__element--medium">
             <i class="fa-solid fa-car-side board__img--medium"></i>
             <h3>Toyota Aygo</h3>
@@ -93,10 +96,13 @@
         </div>
       </div>
       <ul class="board__stage-dots">
-        <li class="board__dot board__dot--active-dot">Wybierz pojazd</li>
-        <li class="board__dot board__dot--inactive-dot"></li>
-        <li class="board__dot board__dot--inactive-dot"></li>
+        <li class="board__dot" data-id="dot"><p>Wybierz pojazd</p></li>
+        <li class="board__dot--inactive-dot" data-id="dot">
+          <p>Wpisz przebieg</p>
+        </li>
       </ul>
     </main>
+
+    <script src="Car.js"></script>
   </body>
 </html>

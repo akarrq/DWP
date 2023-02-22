@@ -161,25 +161,21 @@
   list-style: none;
   margin-top: 12px;
 }
-.board__dot--active-dot {
-  margin: 0 5px;
+.board__stage-dots :nth-child(3) {
+  margin-left: 15px;
+}
+.board__dot {
+  margin-top: 6px;
 }
 .board__dot--inactive-dot {
-  height: 10px;
-  width: 10px;
-  margin: 4px 5px;
-  border-radius: 50%;
-  background-color: black;
+  margin-left: 23px;
+  list-style: initial;
 }
-.board__dot--inactive-dot:first-child {
-  height: 8px;
-  width: 8px;
-  margin: 5px;
+.board__dot--inactive-dot::marker {
+  font-size: 20px;
 }
-.board__dot:last-child {
-  height: 8px;
-  width: 8px;
-  margin: 5px;
+.board__dot--inactive-dot > p {
+  display: none;
 }
 
 .list {
@@ -383,6 +379,39 @@
 }
 .return__img {
   padding-right: 6px;
+}
+
+.carEdit {
+  width: 100%;
+  font-size: 22px;
+}
+.carEdit > div > i {
+  font-size: 56px;
+}
+.carEdit__confirmBtn {
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #21392b;
+}
+.carEdit__odometer {
+  display: block;
+  margin: 10px auto;
+  height: 48px;
+  width: 80%;
+  border: 1px solid #21392b;
+  border-radius: 5px;
+  font-size: 22px;
+  text-align: center;
+}
+.carEdit__confirmMessage {
+  text-align: center;
+  color: green;
+  margin: 10px 0;
+}
+.carEdit__inactive {
+  display: none;
 }
 
 @font-face {
